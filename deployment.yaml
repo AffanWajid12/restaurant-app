@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo
+  namespace: restaurant-ns
 spec:
   replicas: 1
   selector:
@@ -29,6 +30,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
+  namespace: restaurant-ns
 spec:
   replicas: 2
   selector:
@@ -60,6 +62,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: restaurant-ns
 spec:
   replicas: 2
   selector:
