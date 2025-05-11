@@ -18,7 +18,8 @@ jobs:
         shell: powershell
         run: |
           Write-Host "Switching to Minikube Docker..."
-          & minikube -p minikube docker-env --shell=cmd | Invoke-Expression
+          $envs = & minikube -p minikube docker-env --shell powershell | Out-String
+          Invoke-Expression $envs
 
       - name: Build backend image
         working-directory: resturant-backend-main
